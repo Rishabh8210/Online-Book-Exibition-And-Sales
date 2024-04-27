@@ -225,3 +225,13 @@ export const cartData = [
       }
     }
   ]
+
+
+
+export const teamMembers = [
+  { name: 'AYUSH KUMAR JHA', regNo: '23MCA0255', imageUrl: "https://media.licdn.com/dms/image/D4D03AQEGmOW2D_cwgQ/profile-displayphoto-shrink_800_800/0/1693417289891?e=1719446400&v=beta&t=eLr_VXshdJ30EREE5VS2XeyERpP_4aIGvGgHb7dzTDI" },
+  { name: 'ANSHUMAN SHARMA', regNo: '23MCA0073', imageUrl: "https://avatars.githubusercontent.com/u/73778637?v=4" },
+  { name: 'RISHABH PANDEY', regNo: '23MCA0311', imageUrl: "https://avatars.githubusercontent.com/u/92287287?v=4" },
+  { name: 'VANSHIKA RAWAT', regNo: '23MCA0213', imageUrl: "https://media.licdn.com/dms/image/D5603AQEBNwazcfdE_g/profile-displayphoto-shrink_800_800/0/1639168162986?e=1719446400&v=beta&t=DNb16PfQkpbHhdwDt2PFNhsecXWLI291IS3eYFPz3F8" },
+  { name: 'RACHIT TRIPATHI', regNo: '23MCA0274', imageUrl: "" }
+];

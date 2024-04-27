@@ -1,24 +1,37 @@
 import React from 'react'
-
+import ProfileIcon from '../assets/icons8-male-user-100.png'
+import { Link } from 'react-router-dom'
 const Header = () => {
-  return (
-    <div className='h-16 w-full bg-bgColor flex gap-10 px-12 items-center justify-between'>
-        <div className='h-full w-36 flex items-center font-extrabold'>
-            <h1 className='text-4xl'>OB&S</h1>
+    const token = window.localStorage.getItem('token');
+    return (
+        <div className='h-16 w-full bg-bgColor flex gap-10 px-12 items-center justify-between'>
+            <div className='h-full w-36 flex items-center font-extrabold'>
+                <h1 className='text-4xl'>OB&S</h1>
+            </div>
+            <div className='h-full w-fit  flex gap-20 items-center text-lg'>
+                <Link to="/">
+                    <p className='font-bold hover:underline'>Home</p>
+                </Link>
+                <Link to="/shop">
+                    <p className='font-bold hover:underline'>Shop</p>
+                </Link>
+                <Link to="/about">
+                    <p className='font-bold hover:underline'>About</p>
+                </Link>
+                <Link to="/team">
+                    <p className='font-bold hover:underline'>Team</p>
+                </Link>
+            </div>
+            {
+                token ? <Link to='/profile'><img className='w-10' src={ProfileIcon} alt='Profile' /></Link> :
+                    <div className='h-10 w-28 flex rounded-md bg-orange-400 font-semibold items-center justify-center'>
+                        <Link to="/signin">
+                            <p className='text-white'>Sign in</p>
+                        </Link>
+                    </div>
+            }
         </div>
-        <div className='h-full w-fit  flex gap-20 items-center text-lg'>
-            <p>Home</p>
-            <p>Shop</p>
-            <p>About</p>
-            <p>Team</p>
-        </div>
-        <div className='h-full w-fit flex gap-7 items-center'>
-            <button className='h-10 border-2 w-28 rounded-md bg-orange-400 font-semibold'>Sign up</button>
-            <button className='h-10 border-2 w-28 rounded-md bg-orange-400 font-semibold'>Login</button>
-            
-        </div>
-    </div>
-  )
+    )
 }
 
 export default Header
