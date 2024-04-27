@@ -9,7 +9,7 @@ const LearningBanner = () => {
         </div>
         <div className='h-full w-1/2 px-16 justify-center flex flex-col'>
             <h1 className='text-6xl w-96 text-white font-semibold'>
-                A library That's Always Open.
+                Keep Reading. Keep Learning
             </h1>
         </div>
     </div>
