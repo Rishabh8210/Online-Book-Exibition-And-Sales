@@ -27,14 +27,6 @@ const Cart = () => {
       .catch((err) => {
         console.log(err)
       });
-
-    axios.get(`http://52.90.160.27:3000/api/user/${userId}/fetch`)
-      .then((res) => {
-        console.log(res.data)
-      })
-      .catch((e) => {
-        console.log(e)
-      })
   }
 
   const calculateTotal = () => {
