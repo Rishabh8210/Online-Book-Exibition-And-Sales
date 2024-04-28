@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom'
 import { clearCart } from '../utils/cartSlice';
+import {addItem} from '../utils/issuedBooks'
 
 const Invoice = () => {
    const cartItemsData = useSelector(store => store.cart.items)
    console.log(cartItemsData)
    const dispatch = useDispatch()
     const cleaningCart = () => {
+       dispatch(addItem(cartItemsData))
        dispatch(clearCart())
     }
    const calculateTotal = () => {
@@ -55,9 +57,12 @@ const Invoice = () => {
       <div className="flex justify-end mt-6">
         <h2 className="text-xl font-bold">Total Amount: ₹{calculateTotal()}</h2>
       </div>
-      <div>
+      <div className='flex gap-10'>
         <Link to='/'>
             <p className="w-fit bg-blue-500 hover:bg-orange-400 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110" onClick={() => cleaningCart()}>Go to Homepage</p>
+        </Link>
+        <Link to='/profile'>
+            <p className="w-fit bg-blue-500 hover:bg-orange-400 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110" onClick={() => cleaningCart()}>Go to Profile</p>
         </Link>
       </div>
     </div>

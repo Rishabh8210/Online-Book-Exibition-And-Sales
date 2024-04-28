@@ -10,8 +10,8 @@ const CartItem = ({ item }) => {
     }
     return (
         <div className="flex justify-between items-center mb-2 p-4 border-b border-gray-200">
-            <div className="flex items-center">
-                <img src={logo} alt={item.title} className="w-20 h-20 pr-4 rounded shadow" />
+            <div className="flex items-center gap-5">
+                <img src={item?.imageURLS?.large} alt={item.title} className="w-20 h-20 pr-4 rounded shadow" />
                 <div>
                     <h5 className="text-base font-bold text-gray-800">{item.title}</h5>
                     <p className="text-gray-600">by {item.author}</p>

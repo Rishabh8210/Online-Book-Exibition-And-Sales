@@ -235,3 +235,5 @@ export const teamMembers = [
   { name: 'VANSHIKA RAWAT', regNo: '23MCA0213', imageUrl: "https://media.licdn.com/dms/image/D5603AQEBNwazcfdE_g/profile-displayphoto-shrink_800_800/0/1639168162986?e=1719446400&v=beta&t=DNb16PfQkpbHhdwDt2PFNhsecXWLI291IS3eYFPz3F8" },
   { name: 'RACHIT TRIPATHI', regNo: '23MCA0274', imageUrl: "" }
 ];
+
+export const shimerCount = [1,2,39,,2,4,5,0];

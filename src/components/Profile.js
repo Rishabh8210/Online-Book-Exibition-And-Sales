@@ -1,41 +1,33 @@
-import React,{useEffect,useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Cart from './Cart';
+import NotificationList from './NotificationList';
+import { useSelector } from 'react-redux';
+import store from '../utils/store';
+import IssuedBooks from './IssuedBooks';
 
 const Profile = () => {
-    const [notificationData, setNotificationData] = useState([])
-    const handleClick = (e) => {
+    const issuedBoooks = useSelector(store => store.issued.items)
+    console.log(issuedBoooks)
+    const handleClick = () => {
         window.localStorage.clear();
-        window.location.href = './signin'
+        window.location.href = '/signin'
     }
-    async function fetchNotification(){
-        const data = await fetch('http://52.90.160.27:3000/api/notify/')
-        const notifyData = await data.json();
-        console.log(notifyData)
-        setNotificationData(notifyData)
-    }
-    useEffect(() => {
-        fetchNotification();
-    },[])
-  return (
-    <>
-    <div className='min-h-[650px] bg-bgColor w-full flex py-8 px-16 gap-20'>
-        <div className='w-96 h-full shadow-md p-5 '>
-            <h1 className='font-bold pb-10 text-5xl underline'>Notification</h1>
-            <div className='flex flex-col gap-5'>
-                {
-                    notificationData?.data && notificationData?.data.map((data, index)=>{
-                        return <p className='text-base p-3 bg-orange-200 rounded-lg font-semibold'>{data?.title}</p>
-                    })
-                }
+    return (
+        <>
+            <div className='min-h-[650px] bg-bgColor w-full flex py-8 px-16 gap-20'>
+                <NotificationList />
+                <div className='flex flex-col gap-10'>
+                    <div className='w-full flex justify-end'>
+                        <button className="w-fit bg-blue-500 hover:bg-orange-400 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110" onClick={() => handleClick()}>
+                            Sign out
+                        </button>
+                    </div>
+                    <Cart />
+                    <IssuedBooks />
+                </div>
             </div>
-        </div>
-        <div>
-            <Cart />
-        </div>
-    </div>
-    <button onClick={handleClick}>Logout</button>
-    </>
-  )
+        </>
+    )
 }
 
 export default Profile

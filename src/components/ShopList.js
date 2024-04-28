@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import ItemCard from './ItemCard'
 import {books} from '../constant'
+import ShimerBooksCardList from './ShimerBooksCardList'
 const ShopList = () => {
   const [bookData, setBookData] = useState([])
   useEffect(() => {
@@ -19,11 +20,13 @@ const ShopList = () => {
   return (
     <div className="bg-bgColor w-screen px-16 py-5">
       <h2 className="text-3xl font-bold py-8">Shop</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      {
+          bookData.length == 0 ? <ShimerBooksCardList /> : <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {bookData?.data?.map((book, index) => (
           <ItemCard key={index} book={book} />
         ))}
       </div>
+}
     </div>
   )
 }
