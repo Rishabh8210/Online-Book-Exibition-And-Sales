@@ -1,58 +1,16 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Invoice = () => {
-  const [products, setProducts] = useState([
-    {
-      "ISBN": "526147852",
-      "title": "Whispers of the Past",
-      "author": "Evelyn Oak",
-      "yearOfPublication": 2003,
-      "rating": 4,
-      "price": 40,
-      "publisher": "Pinecone Press",
-      "quantity": 1
-    },
-    {
-      "ISBN": "781369402",
-      "title": "Journey Through the Stars",
-      "author": "Leo P. Orion",
-      "yearOfPublication": 2010,
-      "rating": 5,
-      "price": 30,
-      "publisher": "Galaxy Books",
-      "quantity": 1
-    },
-    {
-      "ISBN": "394085729",
-      "title": "The Art of Solitude",
-      "author": "Sara M. Lonewood",
-      "yearOfPublication": 1998,
-      "rating": 3.5,
-      "price": 25,
-      "publisher": "Quiet Corner Publishing",
-      "quantity": 1
-    },
-    {
-      "ISBN": "840275931",
-      "title": "Echoes of the Future",
-      "author": "Cassandra Visions",
-      "yearOfPublication": 2020,
-      "rating": 4.5,
-      "price": 45,
-      "publisher": "Tomorrow's Tales",
-      "quantity": 1
+   const cartItemsData = useSelector(store => store.cart.items)
+   console.log(cartItemsData)
+   const calculateTotal = () => {
+    let total = 0
+    for(let item of cartItemsData){
+      total += item.price;
     }
-  ]
-  );
-
-  const addProduct = (newProduct) => {
-    setProducts([...products, { ...newProduct, quantity: 1 }]);
-  };
-
-  const calculateTotal = () => {
-    return products.reduce((total, product) => total + (product.price * product.quantity), 0);
-  };
-
+    return total
+  }
   return (
     <div className="invoice-page bg-white px-16 py-8">
       <h1 className="text-2xl font-bold mb-4">OB&S Invoice</h1>
@@ -73,13 +31,13 @@ const Invoice = () => {
           </tr>
         </thead>
         <tbody>
-          {products.map((product, index) => (
+          {cartItemsData.map((product, index) => (
             <tr key={index}>
               <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                {product.title}
+                {product?.title}
               </td>
               <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                {product.quantity}
+                {product.quantity ? product.quantity : 1}
               </td>
               <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 ₹{product.price}
