@@ -14,6 +14,11 @@ import About from './components/About'
 import Profile from './components/Profile';
 import { Provider } from 'react-redux';
 import store from './utils/store';
+import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './components/AdminDashboard';
+import AddBook from './components/AddBook';
+import BookFair from './components/BookFair';
+import Subscription from './components/Subscription';
 function App() {
   return (
     <Provider store = {store}>
@@ -26,7 +31,12 @@ function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="signin" element={<Signin />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="admin" element={<AdminLogin />} />
+          <Route path="addBook" element={<AddBook />} />
+          <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="team" element={<Team />} />
+          <Route path="subscription" element={<Subscription />} />
+          <Route path="bookFair" element={<BookFair />} />
           <Route path="about" element={<About />} />
           <Route path="profile" element={<Profile />} />
           <Route path="invoice" element={<Invoice />} />

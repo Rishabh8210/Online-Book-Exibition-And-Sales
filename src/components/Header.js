@@ -21,6 +21,12 @@ const Header = () => {
                 <Link to="/team">
                     <p className='font-bold hover:underline'>Team</p>
                 </Link>
+                <Link to="/bookFair">
+                    <p className='font-bold hover:underline'>Book Fair</p>
+                </Link>
+                <Link to="/subscription">
+                    <p className='font-bold hover:underline'>Subscription</p>
+                </Link>
             </div>
             {
                 token ? <Link to='/profile'><img className='w-10' src={ProfileIcon} alt='Profile' /></Link> :

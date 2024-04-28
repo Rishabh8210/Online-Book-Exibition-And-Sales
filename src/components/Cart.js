@@ -3,11 +3,33 @@ import { cartData } from '../constant'
 import CartItem from './CartItem';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios'
 const Cart = () => {
+  const userId = localStorage.getItem('userId')
   let totalAmount = 0;
   const cartItemsData = useSelector(store => store.cart.items)
-  console.log(cartItemsData)
+  
+  
+  const handleCart = () => {
+    
+    const data = {
+      userId: userId,
+      issue: cartItemsData,
+      amount:totalAmount
+    }
+
+    axios.post('http://52.90.160.27:3000/api/bill', data)
+    .then((res) => {
+      if (res.data.success === true) {
+          console.log(res.data.data);
+      }
+    })
+    .catch((err)=>{
+      console.log(err)
+    });
+      
+    
+  }
 
   const calculateTotal = () => {
     let total = 0
@@ -32,7 +54,7 @@ const Cart = () => {
         {
           totalAmount == 0 ? <p className="w-fit bg-red-600 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110">Your Cart is Empty !</p> :
             <Link to='/invoice'>
-              <p className="w-fit bg-blue-500 hover:bg-orange-400 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110">Place Order</p>
+              <p className="w-fit bg-blue-500 hover:bg-orange-400 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110" onClick={() => handleCart()}>Place Order</p>
             </Link>
         }
       </div>

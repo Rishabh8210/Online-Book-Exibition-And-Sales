@@ -19,7 +19,7 @@ const Signin = () => {
           alert("login successful");
 
           localStorage.setItem("token", res.data.data.token);
-          localStorage.setItem("name", res.data.data.userId);
+          localStorage.setItem("userId", res.data.data.userId);
         //   window.localStorage.setItem("loggedIn", true); 
           window.location.href = "./";
         }
@@ -44,6 +44,7 @@ const Signin = () => {
                 <div className='w-1/2 flex flex-col items-center gap-4'>
                     <button className='h-10 w-28 rounded-md bg-bgColor font-semibold hover:bg-orange-100'>Sign in</button>
                     <p className='text-white text-lg'>Don't have an account ? <Link to='/signup'><span className='text-blue-700 font-bold'>Register</span></Link></p>
+                    <p className='text-white text-lg'>Admin sign in ? <Link to='/admin'><span className='text-blue-700 font-bold'>Sign in</span></Link></p>
                 </div>
             </form>
         </div>

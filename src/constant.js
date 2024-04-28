@@ -237,3 +237,30 @@ export const teamMembers = [
 ];
 
 export const shimerCount = [1,2,39,,2,4,5,0];
+
+export const subscription = [
+  {
+    title: '7-Day Subscription',
+    duration: 7,
+    amount: 199.99,
+    imageURLS: {
+      large: 'https://example.com/images/7daysubscription.jpg',
+    },
+  },
+  {
+    title: '30-Day Subscription',
+    duration: 30,
+    amount: 799.99,
+    imageURLS: {
+      large: 'https://example.com/images/30daysubscription.jpg',
+    },
+  },
+  {
+    title: '90-Day Subscription',
+    duration: 90,
+    amount: 1999.99,
+    imageURLS: {
+      large: 'https://example.com/images/90daysubscription.jpg',
+    },
+  },
+];
