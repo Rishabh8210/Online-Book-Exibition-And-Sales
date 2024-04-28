@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {Link} from 'react-router-dom'
+import { clearCart } from '../utils/cartSlice';
 
 const Invoice = () => {
    const cartItemsData = useSelector(store => store.cart.items)
    console.log(cartItemsData)
+   const dispatch = useDispatch()
+    const cleaningCart = () => {
+       dispatch(clearCart())
+    }
    const calculateTotal = () => {
     let total = 0
     for(let item of cartItemsData){
@@ -48,6 +54,11 @@ const Invoice = () => {
       </table>
       <div className="flex justify-end mt-6">
         <h2 className="text-xl font-bold">Total Amount: ₹{calculateTotal()}</h2>
+      </div>
+      <div>
+        <Link to='/'>
+            <p className="w-fit bg-blue-500 hover:bg-orange-400 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110" onClick={() => cleaningCart()}>Go to Homepage</p>
+        </Link>
       </div>
     </div>
   );
