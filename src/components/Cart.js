@@ -8,27 +8,33 @@ const Cart = () => {
   const userId = localStorage.getItem('userId')
   let totalAmount = 0;
   const cartItemsData = useSelector(store => store.cart.items)
-  
-  
+
+
   const handleCart = () => {
-    
+
     const data = {
       userId: userId,
       issue: cartItemsData,
-      amount:totalAmount
+      amount: totalAmount
     }
 
     axios.post('http://52.90.160.27:3000/api/bill', data)
-    .then((res) => {
-      if (res.data.success === true) {
+      .then((res) => {
+        if (res.data.success === true) {
           console.log(res.data.data);
-      }
-    })
-    .catch((err)=>{
-      console.log(err)
-    });
-      
-    
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+
+    axios.get(`http://52.90.160.27:3000/api/user/${userId}/fetch`)
+      .then((res) => {
+        console.log(res.data)
+      })
+      .catch((e) => {
+        console.log(e)
+      })
   }
 
   const calculateTotal = () => {

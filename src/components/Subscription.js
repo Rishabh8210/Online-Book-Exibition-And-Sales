@@ -9,7 +9,7 @@ const Subscription = () => {
     <div className='flex justify-around px-16 py-8'>
         {
             subscription && subscription.map((data, ind) => {
-                return <SubscriptionCard key={ind} subscription={data}/>
+                return <SubscriptionCard key={ind} subscription={data} index = {ind}/>
             })
         }
     </div>

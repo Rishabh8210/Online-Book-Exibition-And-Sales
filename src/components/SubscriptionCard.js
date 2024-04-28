@@ -1,8 +1,40 @@
 import React from 'react'
 import ig from '../assets/Designer (4).png';
-const SubscriptionCard = ({subscription}) => {
-      const handleAddItem = () => {
-    
+import axios from 'axios'
+const SubscriptionCard = ({ subscription, index }) => {
+  const handleAddItem = () => {
+
+    const userId = localStorage.getItem('userId');
+    if(!userId){
+      alert("Please Sign In ")
+        window.location.href = '/signin'
+    }
+    const date = new Date();
+    let day = 0;
+    if (index == 0)
+      day = 7;
+    else if (index == 1)
+      day = 30;
+    else if (index == 2)
+      day = 90;
+
+    date.setDate(date.getDate() + day)
+    console.log(date)
+    const data = {
+      userId: userId,
+      lastDate: date,
+    }
+
+    axios.post(`http://52.90.160.27:3000/api/user/subscribe/${userId}`, data)
+      .then((res) => {
+        if (res.data.success === true) {
+          alert("Subscription Sucessfull !")
+          console.log(res.data.data);
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      });
   };
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
@@ -22,7 +54,7 @@ const SubscriptionCard = ({subscription}) => {
       </div>
       <div className="px-6 pt-4 pb-2">
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-orange-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={() => handleAddItem()}
         >
           Subscribe Now
