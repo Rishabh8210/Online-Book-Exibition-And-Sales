@@ -10,7 +10,7 @@ const BookFair = () => {
     }, [])
     async function fetchData() {
         try {
-            const data = await axios.get('http://52.90.160.27:3000/api/fair/')
+            const data = await axios.get('https://online-book-exibition-and-sales.onrender.com/api/fair/')
             setBookData(data?.data?.data?.books);
             console.log(data?.data?.data?.books);
         } catch {
@@ -38,10 +38,10 @@ const BookFair = () => {
                     <h2 className="text-3xl font-bold py-8">Books</h2>
                 </div>
                 {
-                    bookData.length == 0 ? <ShimerBooksCardList /> : 
+                    bookData && bookData.length == 0 ? <ShimerBooksCardList /> : 
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                         {
-                            bookData.map((book, index) => {
+                            bookData && bookData.map((book, index) => {
                                 return <ItemCard key={index} book={book} />
                             })
                         }

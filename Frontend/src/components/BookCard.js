@@ -10,7 +10,7 @@ const BookCard = ({data}) => {
         <p>{data?.title.substr(0,10)+'...'}</p>
         <div className='flex w-full px-2 justify-between text-orange-400 font-semibold'>
             <p>₹{data?.price}</p>
-            <p>+{data?.rating}★</p>
+            <p>+{data?.ratings}★</p>
         </div>
     </div>
   )

@@ -25,7 +25,7 @@ const Signup = () => {
             alert('Invalid info')
         } else {
             // console.log(fname, lname, email, password);
-            axios.post("http://52.90.160.27:3000/api/user", obj
+            axios.post("https://online-book-exibition-and-sales.onrender.com/api/user", obj
             )
                 .then((res) => {
                     console.log(res.data, "userRegister");
@@ -34,6 +34,7 @@ const Signup = () => {
                     // } else {
                     //     alert("Something went wrong");
                     // }
+                    window.location = '/signin';
                 }).catch((err) => {
                     console.log(err)
                 })

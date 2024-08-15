@@ -9,9 +9,9 @@ const MainContainer = () => {
     <>
         <MainHome />
         <BookLists />
-        <LearningBanner />
+        {/* <LearningBanner />
         <FeaturedCollection />
-        <BookCategories />
+        <BookCategories /> */}
     </>
   )
 }

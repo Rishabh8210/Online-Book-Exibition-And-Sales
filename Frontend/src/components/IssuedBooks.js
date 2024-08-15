@@ -11,7 +11,7 @@ const IssuedBooks = () => {
     const [issuedBooks, setIssuedBooks] = useState([])
     async function fetchData(){
         try{
-            const data = await axios.get(`http://52.90.160.27:3000/api/user/${id}`)
+            const data = await axios.get(`https://online-book-exibition-and-sales.onrender.com/api/user/${id}`)
             setIssuedBooks(data?.data?.data?.booksIssued)
             // console.log("liii",data?.data?.data?.booksIssued);
         }catch(e){

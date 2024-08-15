@@ -18,7 +18,7 @@ const Cart = () => {
       amount: totalAmount
     }
 
-    axios.post('http://52.90.160.27:3000/api/bill', data)
+    axios.post('https://online-book-exibition-and-sales.onrender.com/api/bill', data)
       .then((res) => {
         if (res.data.success === true) {
           console.log(res.data.data);

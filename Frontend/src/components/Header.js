@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 const Header = () => {
     const token = window.localStorage.getItem('token');
     return (
-        <div className='h-16 w-full bg-bgColor flex gap-10 px-12 items-center justify-between'>
+        <div className='h-fit md:h-16 w-full bg-bgColor flex gap-10 p-3 lg:px-12 items-center justify-between'>
             <div className='h-full w-36 flex items-center font-extrabold'>
                 <h1 className='text-4xl'>OB&S</h1>
             </div>
-            <div className='h-full w-fit  flex gap-20 items-center text-lg'>
+            <div className='hidden h-full w-fit lg:flex gap-20 items-center text-lg'>
                 <Link to="/">
                     <p className='font-bold hover:underline'>Home</p>
                 </Link>
@@ -30,7 +30,7 @@ const Header = () => {
             </div>
             {
                 token ? <Link to='/profile'><img className='w-10' src={ProfileIcon} alt='Profile' /></Link> :
-                    <div className='h-10 w-28 flex rounded-md bg-orange-400 font-semibold items-center justify-center'>
+                    <div className='h-10 w-24 flex rounded-md bg-orange-400 font-semibold items-center justify-center'>
                         <Link to="/signin">
                             <p className='text-white'>Sign in</p>
                         </Link>

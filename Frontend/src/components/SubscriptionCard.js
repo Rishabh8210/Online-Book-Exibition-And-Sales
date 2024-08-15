@@ -25,7 +25,7 @@ const SubscriptionCard = ({ subscription, index }) => {
       lastDate: date,
     }
 
-    axios.post(`http://52.90.160.27:3000/api/user/subscribe/${userId}`, data)
+    axios.post(`https://online-book-exibition-and-sales.onrender.com/api/user/subscribe/${userId}`, data)
       .then((res) => {
         if (res.data.success === true) {
           alert("Subscription Sucessfull !")

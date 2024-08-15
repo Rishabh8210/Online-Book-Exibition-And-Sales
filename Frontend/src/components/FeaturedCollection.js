@@ -8,7 +8,7 @@ const FeaturedCollection = () => {
   }, [])
   async function fetchData() {
     try {
-      const data = await fetch('http://52.90.160.27:3000/api/book/')
+      const data = await fetch('https://online-book-exibition-and-sales.onrender.com/api/book/')
       const dataJson = await data.json()
       setBookData(dataJson);
       let filterData = dataJson?.data.filter(element => element?.ratings >= 4);

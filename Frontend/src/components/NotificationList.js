@@ -7,7 +7,7 @@ const NotificationList = () => {
         window.location.href = './signin'
     }
     async function fetchNotification(){
-        const data = await fetch('http://52.90.160.27:3000/api/notify/')
+        const data = await fetch('https://online-book-exibition-and-sales.onrender.com/api/notify/')
         const notifyData = await data.json();
         console.log(notifyData)
         setNotificationData(notifyData)

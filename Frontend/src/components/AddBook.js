@@ -16,7 +16,7 @@ const AddBook = () => {
     e.preventDefault();
     // Logic to handle form submission (e.g., send data to backend)
 
-    axios.post('http://52.90.160.27:3000/api/book/create', {
+    axios.post('https://online-book-exibition-and-sales.onrender.com/api/book/create', {
         ISBN:isbn,
         title:title,
         author:author,
