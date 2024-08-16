@@ -20,7 +20,7 @@ const CartItem = ({ item }) => {
             </div>
             <button
                 onClick={() => onRemove(item.ISBN)}
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1"
+                className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1"
             >
                 Remove
             </button>

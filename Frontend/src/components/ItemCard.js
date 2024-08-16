@@ -20,7 +20,7 @@ const ItemCard = ({book}) => {
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><span className='line-through text-gray-400 px-2'>₹{(book?.price * 1.1).toFixed(2)}</span> ₹{book?.price}</span>
         </div>
         <div className="px-6 pt-4 pb-2">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handeleAddItem()}>
+          <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded" onClick={() => handeleAddItem()}>
             Add to Cart
           </button>
         </div>
