@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import BookCard from './BookCard'
-import { BookData } from '../constant'
 const FeaturedCollection = () => {
   const [bookData, setBookData] = useState([])
-  const [featuredBooks, setFeaturedBooks] = useState(BookData)
+  const [featuredBooks, setFeaturedBooks] = useState([])
   useEffect(() => {
     fetchData();
   }, [])
