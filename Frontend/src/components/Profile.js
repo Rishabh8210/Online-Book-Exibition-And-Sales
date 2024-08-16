@@ -8,6 +8,7 @@ const Profile = () => {
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const issuedBoooks = useSelector(store => store.issued.items)
     
+    
     console.log(issuedBoooks)
     const handleClick = () => {
         window.localStorage.clear();
