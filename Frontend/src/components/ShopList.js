@@ -58,7 +58,10 @@ const ShopList = () => {
   const [search, setSearch] = useState('');
   const [bookData, setBookData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-
+  const token = localStorage.getItem('token');
+  if(!token){
+    window.location = '/signin'
+  }
   useEffect(() => {
     fetchData();
   }, []);

@@ -37,7 +37,7 @@ const SubscriptionCard = ({ subscription, index }) => {
       });
   };
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white p-2 ">
       <img
         className="w-full aspect-[9/12]"
         src={ig}
@@ -54,7 +54,7 @@ const SubscriptionCard = ({ subscription, index }) => {
       </div>
       <div className="px-6 pt-4 pb-2">
         <button
-          className="bg-orange-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-orange-400 hover:bg-blue-700 text-white font-bold py-2 px-4 text-xl rounded"
           onClick={() => handleAddItem()}
         >
           Subscribe Now

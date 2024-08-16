@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import BookCard from './BookCard'
+import { BookData } from '../constant'
 const BookLists = () => {
-  const [bookData, setBookData] = useState([])
-  const [newBooks, setNewbooks] = useState([])
+  const [bookData, setBookData] = useState(BookData)
+  const [newBooks, setNewbooks] = useState(BookData)
   useEffect(() => {
     fetchData();
   },[])
@@ -18,13 +19,12 @@ const BookLists = () => {
     }
   }
   return (
-    <div className='min-h-80 w-full px-16'>
+    <div className='min-h-80 w-full p-3'>
         <p className='text-2xl font-semibold py-5'>New Books</p>
-        <div className='flex gap-10 overflow-auto'>
+        <div className='flex gap-5 overflow-auto'>
             {
               newBooks && newBooks.map((data, ind) => {
                  return <BookCard key={data.ISBN} data = {data}/>
-                 return 1;
               })
             }
         </div>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import BookCard from './BookCard'
+import { BookData } from '../constant'
 const FeaturedCollection = () => {
   const [bookData, setBookData] = useState([])
-  const [featuredBooks, setFeaturedBooks] = useState([])
+  const [featuredBooks, setFeaturedBooks] = useState(BookData)
   useEffect(() => {
     fetchData();
   }, [])
@@ -19,9 +20,9 @@ const FeaturedCollection = () => {
     }
   }
   return (
-    <div className='min-h-80 w-full px-16'>
-      <p className='text-2xl font-semibold py-5'>Featured Collections</p>
-      <div className='flex gap-10 flex-wrap'>
+    <div className='h-fit w-full p-3'>
+      <p className='text-2xl font-semibold'>Featured Collections</p>
+      <div className='w-full flex gap-5 py-5 overflow-auto'>
         {
           featuredBooks && featuredBooks.map((data, ind) => {
             return <BookCard key={data.ISBN} data={data} />
