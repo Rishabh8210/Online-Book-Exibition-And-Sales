@@ -2,7 +2,7 @@ import React from 'react'
 import './css/ShimerBooksCardCss.css';
 const ShimerBooksCard = () => {
     return (
-        <div className="w-96 rounded overflow-hidden shadow-lg bg-gradient-to-tr from-gray-400 to-gray-300 animate-shimmer flex-shrink-0">
+        <div className="max-w-sm  bg-white rounded overflow-hidden shadow-lg bg-gradient-to-tr from-gray-400 to-gray-300 animate-shimmer flex-shrink-0">
           <div className="w-full aspect-[9/12]"></div>
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2"></div>

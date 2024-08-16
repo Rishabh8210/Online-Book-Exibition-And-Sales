@@ -2,6 +2,7 @@ import React from 'react'
 import pngegg from '../assets/pngegg.png'
 import { Link } from 'react-router-dom'
 const MainHome = () => {
+    const token = localStorage.getItem('token');
     return (
         <div className='w-screen h-fit p-3 bg-bgColor flex justify-between'>
             <div className='h-full w-full md:w-1/2 py-10 flex flex-col gap-10 justify-center ' >
@@ -15,10 +16,16 @@ const MainHome = () => {
                             <p className='px-10 font-semibold'>Enter</p>
                             <div className='w-12 flex items-center justify-center h-full font-bold text-xl bg-black text-white rounded-full'>→</div>
                         </div>
-                        <div className='w-full'>
-                            <p className='text-center'>+500 reviews</p>
+                        <div className='w-full pb-5'>
+                            <p className='text-right'>+500 reviews</p>
                         </div>
-                        <p className='text-2xl py-5 font-semibold underline'>Go to Shop →</p>
+                        {
+                            token ? <p className='text-2xl  font-semibold underline'>Go to Shop →</p> : <Link to="/signin">
+                                <div className='h-fit p-3 w-28 flex rounded-md text-xl bg-orange-400 font-semibold items-center justify-center'>
+                                    <p className='text-white'>Sign in</p>
+                                </div>
+                            </Link>
+                        }
                     </div>
                 </Link>
             </div>

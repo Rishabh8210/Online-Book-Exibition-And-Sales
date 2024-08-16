@@ -41,38 +41,38 @@ const Signup = () => {
         }
     }
     return (
-        <div className='min-h-[600px] bg-bgColor px-16 flex justify-center items-center'>
-            <div className='h-fit w-1/2 py-6 bg-orange-400 flex flex-col justify-center items-center rounded-2xl'>
+        <div className='h-fit w-screen px-5 py-10  flex justify-center items-center'>
+            <div className='h-fit w-full md:w-1/2 py-6 bg-orange-400 flex flex-col justify-center items-center rounded-lg shadow-xl'>
                 <h1 className='text-2xl pb-2 text-white font-semibold'>Sign Up</h1>
-                <form onSubmit={handleSubmit} className='h-fit w-full flex flex-col items-center gap-5'>
-                    <div className='w-1/2 flex flex-col '>
+                <form onSubmit={handleSubmit} className='h-fit w-full flex flex-col items-center px-5 gap-5'>
+                    <div className='w-full md:w-1/2 flex flex-col '>
                         <label className='text-xl font-semibold text-white' htmlFor='fname'>First name</label>
-                        <input className='h-9 w-full px-5 text-base rounded-xl' type='text' name='fname' placeholder='Enter first name' required value={fname} onChange={(e) => setFname(e.target.value)} />
+                        <input className='h-9 w-full px-5 text-base rounded-lg' type='text' name='fname' placeholder='Enter first name' required value={fname} onChange={(e) => setFname(e.target.value)} />
                     </div>
-                    <div className='w-1/2 flex flex-col '>
+                    <div className='w-full md:w-1/2 flex flex-col '>
                         <label className='text-xl font-semibold text-white' htmlFor='lname'>Last name</label>
-                        <input className='h-9 w-full px-5 text-base rounded-xl' type='text' name='lname' placeholder='Enter last name' required value={lname} onChange={(e) => setLname(e.target.value)} />
+                        <input className='h-9 w-full px-5 text-base rounded-lg' type='text' name='lname' placeholder='Enter last name' required value={lname} onChange={(e) => setLname(e.target.value)} />
                     </div>
-                    <div className='w-1/2 flex flex-col '>
+                    <div className='w-full md:w-1/2 flex flex-col '>
                         <label className='text-xl font-semibold text-white' htmlFor='email'>Email</label>
-                        <input className='h-9 w-full px-5 text-base rounded-xl' type='email' name='email' placeholder='Enter email' required value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input className='h-9 w-full px-5 text-base rounded-lg' type='email' name='email' placeholder='Enter email' required value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
-                    <div className='w-1/2 flex flex-col '>
+                    <div className='w-full md:w-1/2 flex flex-col '>
                         <label className='text-xl font-semibold text-white' htmlFor='password'>Password</label>
-                        <input className='h-9 w-full px-5 text-base rounded-xl' type='password' name='password' placeholder='Enter password' required value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input className='h-9 w-full px-5 text-base rounded-lg' type='password' name='password' placeholder='Enter password' required value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
-                    <div className='w-1/2 flex flex-col '>
+                    <div className='w-full md:w-1/2 flex flex-col '>
                         <label className='text-xl font-semibold text-white' htmlFor='confirmPassword'>Confirm Password</label>
-                        <input className='h-9 w-full px-5 text-base rounded-xl' type='password' name='confirmPassword' placeholder='Enter confirm password' required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                        <input className='h-9 w-full px-5 text-base rounded-lg' type='password' name='confirmPassword' placeholder='Enter confirm password' required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                     </div>
-                    <div className='w-1/2 flex flex-col '>
+                    <div className='w-full md:w-1/2 flex flex-col '>
                         <label className='text-xl font-semibold text-white' htmlFor='userType'>User type</label>
-                        <select className='h-9 w-full px-5 text-base rounded-xl bg-white' value={userType} onChange={(e) => setUserType(e.target.value)}>
+                        <select className='h-9 w-full px-5 text-base rounded-lg bg-white' value={userType} onChange={(e) => setUserType(e.target.value)}>
                             <option value="normal">Normal</option>
                             <option value="seller">Seller</option>
                         </select>
                     </div>
-                    <div className='w-1/2 flex flex-col items-center'>
+                    <div className='w-full md:w-1/2 flex flex-col gap-5 items-center'>
                         <button className='h-9 w-28 rounded-md bg-bgColor pb:2 font-semibold hover:bg-orange-100'>Sign up</button>
                         <p className='text-white text-lg'>Already Registered ? <Link to='/signin'><span className='text-blue-700 font-bold'>Sign in</span></Link></p>
                     </div>

@@ -5,6 +5,10 @@ import ItemCard from './ItemCard';
 import axios from 'axios'
 const BookFair = () => {
     const [bookData, setBookData] = useState([])
+    const token = localStorage.getItem('token');
+    if (!token) {
+        window.location = '/signin'
+    }
     useEffect(() => {
         fetchData();
     }, [])
@@ -38,14 +42,14 @@ const BookFair = () => {
                     <h2 className="text-3xl font-bold py-8">Books</h2>
                 </div>
                 {
-                    bookData && bookData.length == 0 ? <ShimerBooksCardList /> : 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                        {
-                            bookData && bookData.map((book, index) => {
-                                return <ItemCard key={index} book={book} />
-                            })
-                        }
-                    </div>
+                    bookData && bookData.length == 0 ? <ShimerBooksCardList /> :
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                            {
+                                bookData && bookData.map((book, index) => {
+                                    return <ItemCard key={index} book={book} />
+                                })
+                            }
+                        </div>
                 }
             </div>
         </>

@@ -58,7 +58,10 @@ const ShopList = () => {
   const [search, setSearch] = useState('');
   const [bookData, setBookData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-
+  const token = localStorage.getItem('token');
+  if(!token){
+    window.location = '/signin'
+  }
   useEffect(() => {
     fetchData();
   }, []);
@@ -85,11 +88,11 @@ const ShopList = () => {
   };
 
   return (
-    <div className="bg-bgColor w-screen px-16 py-5">
-      <div className='w-full flex justify-between'>
-        <h2 className="text-3xl font-bold py-8">Shop</h2>
-        <div className='w-1/3 flex gap-5'>
-          <input className='h-12 w-5/6 px-5 text-xl rounded-xl' type='text' name='search' placeholder='Search book' value={search} onChange={(e) => setSearch(e.target.value)} />
+    <div className="bg-bgColor w-screen p-5">
+      <div className='w-full flex flex-col md:flex-row  justify-between'>
+        <h2 className="text-3xl font-bold pt-8">Shop</h2>
+        <div className='w-full md:w-1/3 flex py-7 gap-2'>
+          <input className='h-12 w-5/6 px-3 text-xl rounded-xl' type='text' name='search' placeholder='Search book' value={search} onChange={(e) => setSearch(e.target.value)} />
           <button className='h-12 w-28 rounded-md bg-orange-400 text-white font-semibold hover:bg-orange-100' onClick={filterBooks}>Search</button>
         </div>
       </div>

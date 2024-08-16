@@ -6,7 +6,7 @@ const Subscription = () => {
 
 
   return (
-    <div className='flex justify-around px-16 py-8'>
+    <div className='flex flex-col gap-10 md:flex-row justify-around p-3'>
         {
             subscription && subscription.map((data, ind) => {
                 return <SubscriptionCard key={ind} subscription={data} index = {ind}/>
