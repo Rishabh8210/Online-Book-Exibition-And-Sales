@@ -38,7 +38,7 @@ const Cart = () => {
     return total
   }
   return (
-    <div className="cart-page max-h-[650px] h-fit w-[900px] bg-bgColor px-8 py-3 rounded-lg shadow-lg overflow-scroll">
+    <div className="cart-page max-h-[650px] h-fit w-full bg-bgColor px-8 py-3 rounded-lg shadow-lg overflow-scroll overflow-x-hidden">
       <h1 className="text-xl font-bold text-center text-gray-800">Your Cart - {cartItemsData.length} items</h1>
       {cartItemsData.map((item, index) => (
         <CartItem key={index} item={item} />
@@ -50,9 +50,9 @@ const Cart = () => {
 
       <div className="text-center mt-6 w-full flex justify-center">
         {
-          totalAmount == 0 ? <p className="w-fit bg-red-600 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110">Your Cart is Empty !</p> :
+          totalAmount == 0 ? <p className="w-fit bg-orange-400 hover:bg-orange-700 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110">Your Cart is Empty !</p> :
             <Link to='/invoice'>
-              <p className="w-fit bg-blue-500 hover:bg-orange-400 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110" onClick={() => handleCart()}>Place Order</p>
+              <p className="w-fit bg-orange-400 hover:bg-orange-700 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110" onClick={() => handleCart()}>Place Order</p>
             </Link>
         }
       </div>

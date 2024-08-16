@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ProfileIcon from '../assets/icons8-male-user-100.png'
 import { Link } from 'react-router-dom'
 import Navigation from './Navigation'
+import hamburgMenu from '../assets/hamburgMenu.png'
 const Header = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const token = window.localStorage.getItem('token');
@@ -10,7 +11,7 @@ const Header = () => {
             <div className='h-full w-36 flex items-center font-extrabold'>
                 <h1 className='text-4xl'>OB&S</h1>
             </div>
-            <p className='h-fit  w-fit px-3 py-2 text-2xl font-bold text-white flex rounded-md bg-orange-400 items-center justify-center lg:hidden' onClick={() => setIsNavOpen(!isNavOpen)}>📖</p>
+            <p className='h-fit  w-fit px-3 py-2 text-2xl font-bold text-white flex rounded-md bg-orange-400 items-center justify-center lg:hidden' onClick={() => setIsNavOpen(!isNavOpen)}><img src={hamburgMenu} alt='Menu'/></p>
             {
                 isNavOpen && <Navigation trigger={isNavOpen} setTrigger={setIsNavOpen} />
             }

@@ -20,7 +20,7 @@ const Invoice = () => {
     return total
   }
   return (
-    <div className="invoice-page bg-white px-16 py-8">
+    <div className="invoice-page bg-white px-5 py-8">
       <h1 className="text-2xl font-bold mb-4">OB&S Invoice</h1>
       <p>GST Number: vit00000</p>
       <p>Date: {new Date().toLocaleDateString()}</p>
@@ -54,15 +54,15 @@ const Invoice = () => {
           ))}
         </tbody>
       </table>
-      <div className="flex justify-end mt-6">
+      <div className="flex justify-end p-5">
         <h2 className="text-xl font-bold">Total Amount: ₹{calculateTotal()}</h2>
       </div>
       <div className='flex gap-10'>
         <Link to='/'>
-            <p className="w-fit bg-blue-500 hover:bg-orange-400 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110" onClick={() => cleaningCart()}>Go to Homepage</p>
+            <p className="w-fit bg-orange-400 hover:bg-orange-700 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110" onClick={() => cleaningCart()}>Go to Homepage</p>
         </Link>
         <Link to='/profile'>
-            <p className="w-fit bg-blue-500 hover:bg-orange-400 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110" onClick={() => cleaningCart()}>Go to Profile</p>
+            <p className="w-fit bg-orange-400 hover:bg-orange-700 cursor-pointer text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-110" onClick={() => cleaningCart()}>Go to Profile</p>
         </Link>
       </div>
     </div>

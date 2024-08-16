@@ -31,8 +31,8 @@ const IssuedBooks = () => {
         return total
       }
     return (
-        <div className="cart-page max-h-[650px] h-fit w-[900px] bg-bgColor px-8 py-3 rounded-lg shadow-lg overflow-scroll">
-            <h1 className="text-xl font-bold text-center text-gray-800">Total issued books - {issuedBooks.length}</h1>
+        <div className="max-h-[650px] h-fit w-full bg-bgColor p-3 rounded-lg shadow-lg overflow-scroll overflow-x-hidden">
+            <h1 className="text-xl font-bold text-center text-gray-800 p-10">Total issued books - {issuedBooks.length}</h1>
             {issuedBooks.map((item, index) => (
                 <IssuedItem key={index} item={item?.bookId} booksIssued = {item} />
             ))} 
