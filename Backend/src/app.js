@@ -8,9 +8,7 @@ const apiRoutes = require("./routes/index");
 
 
 (()=>{
-    app.use(cors({
-        origin: 'http://localhost:3000', // Include cookies in CORS requests if needed
-      }));
+    app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:true}));
 
