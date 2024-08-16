@@ -3,7 +3,7 @@ import BookCard from './BookCard'
 import { BookData } from '../constant'
 const FeaturedCollection = () => {
   const [bookData, setBookData] = useState([])
-  const [featuredBooks, setFeaturedBooks] = useState([])
+  const [featuredBooks, setFeaturedBooks] = useState(BookData)
   useEffect(() => {
     fetchData();
   }, [])
