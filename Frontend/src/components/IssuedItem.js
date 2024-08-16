@@ -5,7 +5,7 @@ import { removeItem } from '../utils/cartSlice';
 
 const IssuedItem = ({ item, booksIssued }) => {
     return (
-        <div className="flex flex-col w-full md:flex-row justify-between gap-5 items-center">
+        <div className="flex flex-col w-full sm:flex-row justify-between gap-5 items-center">
             <div className="flex w-full items-center gap-5">
                 <img src={item?.imageURLS?.large} alt={item.title} className="w-20 h-20 p-2 scale-125 md:scale-110 rounded shadow" />
                 <div>

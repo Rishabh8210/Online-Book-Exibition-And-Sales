@@ -9,13 +9,14 @@ const CartItem = ({ item }) => {
         dispatch(removeItem(item))
     }
     return (
-        <div className="flex justify-between items-center mb-2 p-4 border-b border-gray-200">
-            <div className="flex items-center gap-5">
+        // 
+        <div className="flex flex-col w-full sm:flex-row justify-between gap-5 items-center ">
+            <div className="flex w-full items-center gap-5">
                 <img src={item?.imageURLS?.large} alt={item.title} className="w-20 h-20 pr-4 rounded shadow" />
                 <div>
                     <h5 className="text-base font-bold text-gray-800">{item.title}</h5>
                     <p className="text-gray-600">by {item.author}</p>
-                    <p className="text-gray-600">Price: ₹{item.price}</p>
+                    <p className="text-gray-800 font-bold">Price: ₹{item.price}</p>
                 </div>
             </div>
             <button

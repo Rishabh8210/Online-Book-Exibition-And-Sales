@@ -39,10 +39,15 @@ const Cart = () => {
   }
   return (
     <div className="cart-page max-h-[650px] h-fit w-full bg-bgColor px-8 py-3 rounded-lg shadow-lg overflow-scroll overflow-x-hidden">
-      <h1 className="text-xl font-bold text-center text-gray-800">Your Cart - {cartItemsData.length} items</h1>
-      {cartItemsData.map((item, index) => (
-        <CartItem key={index} item={item} />
-      ))}
+      <h1 className="text-xl font-bold text-center text-gray-800 pb-10 underline">Your Cart - {cartItemsData.length} items</h1>
+      <div className='w-full h-fit flex flex-col gap-7'>
+        {cartItemsData.map((item, index) => (
+          <>
+            <CartItem key={index} item={item} />
+            <hr className='border-black border-opacity-25' />
+          </>
+        ))}
+      </div>
       <div className="flex justify-between items-center mt-8 p-4 bg-white rounded shadow">
         <h2 className="text-xl font-bold text-gray-800">Total Amount:</h2>
         <span className="text-xl font-bold text-green-500">₹{calculateTotal()}</span>
