@@ -25,9 +25,7 @@ const Header = () => {
                 <Link to="/about">
                     <p className='font-bold hover:underline'>About</p>
                 </Link>
-                <Link to="/team">
-                    <p className='font-bold hover:underline'>Team</p>
-                </Link>
+                
                 <Link to="/bookFair">
                     <p className='font-bold hover:underline'>Book Fair</p>
                 </Link>

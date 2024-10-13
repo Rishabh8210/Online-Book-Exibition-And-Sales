@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import Error from './components/Error';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
-import Team from './components/Team';
+// import Team from './components/Team';
 import About from './components/About'
 import Profile from './components/Profile';
 import { Provider } from 'react-redux';
@@ -34,7 +34,6 @@ function App() {
           <Route path="admin" element={<AdminLogin />} />
           <Route path="addBook" element={<AddBook />} />
           <Route path="dashboard" element={<AdminDashboard />} />
-          <Route path="team" element={<Team />} />
           <Route path="subscription" element={<Subscription />} />
           <Route path="bookFair" element={<BookFair />} />
           <Route path="about" element={<About />} />

@@ -12,7 +12,6 @@ const Navigation = ({trigger, setTrigger}) => {
       <div className='py-10 flex flex-col gap-5 justify-center items-center'>
         <Link to='/'><h1 className='text-4xl font-semibold hover:text-orange-400' onClick={() => setTrigger(!trigger)}>Home</h1></Link>
         <Link to='/about'><h1 className='text-4xl font-semibold hover:text-orange-400' onClick={() => setTrigger(!trigger)}>About us</h1></Link>
-        <Link to='/team'><h1 className='text-4xl font-semibold hover:text-orange-400' onClick={() => setTrigger(!trigger)}>Teams</h1></Link>
         <Link to='/subscription'><h1 className='text-4xl font-semibold hover:text-orange-400' onClick={() => setTrigger(!trigger)}>subscription</h1></Link>
         {token && <Link to='/shop'><h1 className='text-4xl font-semibold hover:text-orange-400' onClick={() => setTrigger(!trigger)}>Shop</h1></Link>}
         {token && <Link to='/bookFair'><h1 className='text-4xl font-semibold hover:text-orange-400' onClick={() => setTrigger(!trigger)}>Fair</h1></Link>}
