@@ -19,32 +19,39 @@ import AdminDashboard from './components/AdminDashboard';
 import AddBook from './components/AddBook';
 import BookFair from './components/BookFair';
 import Subscription from './components/Subscription';
+import { Helmet } from 'react-helmet'
 function App() {
   return (
-    <Provider store = {store}>
-    <div className=''>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<MainContainer />} />
-          <Route path="shop" element={<ShopList />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="signin" element={<Signin />} />
-          <Route path="signup" element={<Signup />} />
-          <Route path="admin" element={<AdminLogin />} />
-          <Route path="addBook" element={<AddBook />} />
-          <Route path="dashboard" element={<AdminDashboard />} />
-          <Route path="subscription" element={<Subscription />} />
-          <Route path="bookFair" element={<BookFair />} />
-          <Route path="about" element={<About />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="invoice" element={<Invoice />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
-    </Provider>
+    <>
+      <Helmet>
+        <meta name="description" content="OB&S offers a wide selection of books for browsing and purchase. Explore curated collections across genres and authors with a seamless and secure experience." />
+        <meta name="keywords" content="online book exhibition, book sales, buy books online, book collections, online book store, book genres, secure book purchase" />
+      </Helmet>
+      <Provider store={store}>
+        <div className=''>
+          <Router>
+            <Header />
+            <Routes>
+              <Route path="/" element={<MainContainer />} />
+              <Route path="shop" element={<ShopList />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="signin" element={<Signin />} />
+              <Route path="signup" element={<Signup />} />
+              <Route path="admin" element={<AdminLogin />} />
+              <Route path="addBook" element={<AddBook />} />
+              <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="subscription" element={<Subscription />} />
+              <Route path="bookFair" element={<BookFair />} />
+              <Route path="about" element={<About />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="invoice" element={<Invoice />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+            <Footer />
+          </Router>
+        </div>
+      </Provider>
+    </>
   );
 }
 
